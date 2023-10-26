@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:modul2/app/modules/home/controllers/home_controller.dart';
 
 class HomePageContent extends GetView<HomeController> {
-  const HomePageContent({Key? key});
+  const HomePageContent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +87,7 @@ class HomePageContent extends GetView<HomeController> {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Color(0xFF132B42),
+                          color: const Color(0xFF132B42),
                         ),
                         alignment: Alignment.center,
                         height: 26,
@@ -106,6 +106,7 @@ class HomePageContent extends GetView<HomeController> {
                 Padding(
                   padding: const EdgeInsets.only(top: 20),
                   child: Container(
+                    color: Colors.transparent,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -115,8 +116,17 @@ class HomePageContent extends GetView<HomeController> {
                             height: 100,
                             width: 100,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Color(0xFF132B42)),
+                              borderRadius: BorderRadius.circular(20),
+                              color: const Color(0xFF132B42),
+                              image: const DecorationImage(
+                                  fit: BoxFit.cover,
+                                  alignment:
+                                      Alignment.center, // Atur sesuai kebutuhan
+                                  image: AssetImage(
+                                      'lib/app/data/assets/images/logobmw.png'),
+                                  scale: 0.1 // Ganti dengan path gambar Anda
+                                  ),
+                            ),
                           ),
                         ),
                         Padding(
@@ -126,7 +136,7 @@ class HomePageContent extends GetView<HomeController> {
                             width: 100,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: Color(0xFF132B42)),
+                                color: const Color(0xFF132B42)),
                           ),
                         ),
                         Padding(
@@ -136,7 +146,7 @@ class HomePageContent extends GetView<HomeController> {
                             width: 100,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: Color(0xFF132B42)),
+                                color: const Color(0xFF132B42)),
                           ),
                         ),
                       ],
@@ -146,6 +156,7 @@ class HomePageContent extends GetView<HomeController> {
                 Padding(
                   padding: const EdgeInsets.only(top: 22),
                   child: Container(
+                    color: Colors.transparent,
                     child: Row(children: [
                       const Padding(
                         padding: EdgeInsets.only(left: 15),
@@ -162,7 +173,7 @@ class HomePageContent extends GetView<HomeController> {
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            color: Color(0xFF132B42),
+                            color: const Color(0xFF132B42),
                           ),
                           alignment: Alignment.center,
                           height: 26,
@@ -182,6 +193,7 @@ class HomePageContent extends GetView<HomeController> {
                 Padding(
                   padding: const EdgeInsets.only(top: 20),
                   child: Container(
+                    color: Colors.transparent,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -193,7 +205,7 @@ class HomePageContent extends GetView<HomeController> {
                             decoration: BoxDecoration(
                                 // image: DecorationImage(image: ) ,
                                 borderRadius: BorderRadius.circular(15),
-                                color: Color(0xFF132B42)),
+                                color: const Color(0xFF132B42)),
                           ),
                         ),
                         Padding(
@@ -203,7 +215,7 @@ class HomePageContent extends GetView<HomeController> {
                             width: 170,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
-                                color: Color(0xFF132B42)),
+                                color: const Color(0xFF132B42)),
                           ),
                         ),
                       ],
@@ -216,7 +228,8 @@ class HomePageContent extends GetView<HomeController> {
           Padding(
             padding: const EdgeInsets.only(top: 110, left: 20, right: 100),
             child: Container(
-              child: Text(
+              color: Colors.transparent,
+              child: const Text(
                 'Search for the car brand you want',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
@@ -234,6 +247,12 @@ class HomePageContent extends GetView<HomeController> {
                     color: Colors.transparent,
                     border: Border.all(color: Colors.black),
                   ),
+                  child: const TextField(
+                      decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.search),
+                    labelText: 'search brand car',
+                    hintText: 'Toyota',
+                  )),
                 ),
                 const SizedBox(width: 10), // Tambah jarak horizontal
                 Container(
@@ -243,6 +262,7 @@ class HomePageContent extends GetView<HomeController> {
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.blue[600],
                   ),
+                  child: const Icon(Icons.shape_line_outlined),
                 ),
               ],
             ),

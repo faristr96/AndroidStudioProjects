@@ -1,7 +1,6 @@
 // Halaman-halaman untuk setiap item di BottomNavigationBar (contoh)
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:modul2/app/modules/home/controllers/profile_controller.dart';
 
 class ProfilePage extends GetView<ProfileCotroller> {
@@ -152,8 +151,8 @@ class ProfilePage extends GetView<ProfileCotroller> {
                   )
                 : Container(
                     transformAlignment: Alignment.center,
-                    width: 150,
-                    height: 150,
+                    width: 120,
+                    height: 120,
                     alignment: Alignment.center,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
